@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="875373978">
+    <data-source source="LOCAL" name="Rails ImagesGems: development" uuid="4631f22e-aff9-43b1-9815-dcc47c8da879">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ImagesGems_development</jdbc-url>
+      <user-name>gotqn</user-name>
+      <user-password>dfc5dfcedfc3dfd9dfd9dfcfdfcb</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ImagesGems: test" uuid="9797cc7e-95c0-41f8-a38f-89648e49c819">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ImagesGems_test</jdbc-url>
+      <user-name>gotqn</user-name>
+      <user-password>dfc5dfcedfc3dfd9dfd9dfcfdfcb</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails ImagesGems: production" uuid="3b550326-d33b-46e5-a927-1e0fae5b67b1">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:ImagesGems_production</jdbc-url>
+      <user-name>ImagesGems</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe3dfe7dfebdfeddfefdff9dfeddfefdfe7dff9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
