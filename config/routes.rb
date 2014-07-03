@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
+
   resources :articles
 
   devise_for :users
+  scope '/admin' do
+    resources :users
+  end
 
-  root to: "articles#index"
+  root to: 'articles#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
