@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
   #resources :demo_gems
-  resources :gems, :as => :demo_gems, :controller => :demo_gems
+  resources :gems, as: :demo_gems, controller: :demo_gems
 
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :articles
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   scope '/admin' do
     resources :users
   end
+
+  #devise_for :users
 
   root to: 'articles#index'
 

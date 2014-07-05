@@ -50,3 +50,6 @@ gem 'ckeditor'
 gem 'thumbnail_hover_effect'
 gem 'railslider'
 gem 'modernizr-rails'
+
+gem 'omniauth'
+gem 'omniauth-github'
