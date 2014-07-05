@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  image: MyString
+  github: MyString
+  rubygems: MyString
+  code: MyText
+
+two:
+  name: MyString
+  description: MyString
+  image: MyString
+  github: MyString
+  rubygems: MyString
+  code: MyText

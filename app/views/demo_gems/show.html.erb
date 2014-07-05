@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @demo_gem.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @demo_gem.description %>
+</p>
+
+<p>
+  <%= image_tag @demo_gem.image_url %>
+</p>
+
+<p>
+  <strong>Github:</strong>
+  <%= @demo_gem.github %>
+</p>
+
+<p>
+  <strong>Rubygems:</strong>
+  <%= @demo_gem.rubygems %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @demo_gem.code %>
+</p>
+
+<%= link_to 'Edit', edit_demo_gem_path(@demo_gem) %> |
+<%= link_to 'Back', demo_gems_path %>

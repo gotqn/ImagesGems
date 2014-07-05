@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  #resources :demo_gems
+  resources :gems, :as => :demo_gems, :controller => :demo_gems
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :articles

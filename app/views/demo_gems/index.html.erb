@@ -1,0 +1,35 @@
+<h1>Listing demo_gems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Github</th>
+      <th>Rubygems</th>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @demo_gems.each do |demo_gem| %>
+      <tr>
+        <td><%= demo_gem.name %></td>
+        <td><%= demo_gem.description %></td>
+        <td><%= image_tag demo_gem.image_url(:thumb) %></td>
+        <td><%= demo_gem.github %></td>
+        <td><%= demo_gem.rubygems %></td>
+        <td><%= demo_gem.code %></td>
+        <td><%= link_to 'Show', demo_gem %></td>
+        <td><%= link_to 'Edit', edit_demo_gem_path(demo_gem) %></td>
+        <td><%= link_to 'Destroy', demo_gem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Demo gem', new_demo_gem_path %>

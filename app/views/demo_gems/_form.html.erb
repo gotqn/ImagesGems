@@ -1,0 +1,44 @@
+<%= form_for(@demo_gem) do |f| %>
+  <% if @demo_gem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@demo_gem.errors.count, "error") %> prohibited this demo_gem from being saved:</h2>
+
+      <ul>
+      <% @demo_gem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+    <div class="field">
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <%= f.label :remote_image_url, "or image URL" %><br />
+      <%= f.text_field :remote_image_url %>
+    </div>
+  <div class="field">
+    <%= f.label :github %><br>
+    <%= f.text_field :github %>
+  </div>
+  <div class="field">
+    <%= f.label :rubygems %><br>
+    <%= f.text_field :rubygems %>
+  </div>
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= f.text_area :code %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

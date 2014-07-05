@@ -1,4 +1,5 @@
 class Article < ActiveRecord::Base
+
   mount_uploader :image, ImageUploader
 
   # Relationships
