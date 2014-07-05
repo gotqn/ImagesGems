@@ -3,12 +3,11 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th></th>
       <th>Description</th>
-      <th>Image</th>
-      <th>Github</th>
-      <th>Rubygems</th>
-      <th>Code</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,12 +15,19 @@
   <tbody>
     <% @demo_gems.each do |demo_gem| %>
       <tr>
+        <td><%= image_tag demo_gem.image_url(:thumb) %></td>
         <td><%= demo_gem.name %></td>
         <td><%= demo_gem.description %></td>
-        <td><%= image_tag demo_gem.image_url(:thumb) %></td>
-        <td><%= demo_gem.github %></td>
-        <td><%= demo_gem.rubygems %></td>
-        <td><%= demo_gem.code %></td>
+        <td>
+        <%= link_to(demo_gem.github, title: 'GitHub') do %>
+            <%= image_tag('GitHub.png', width: '25', height: '25',alt: 'Show in GitHub') %>
+        <% end %>
+        </td>
+        <td>
+          <%= link_to(demo_gem.rubygems, title: 'RubyGems') do %>
+            <%= image_tag('RubyGems.png', width: '25', height: '25',alt: 'Show in RubyGems') %>
+          <% end %>
+        </td>
         <td><%= link_to 'Show', demo_gem %></td>
         <td><%= link_to 'Edit', edit_demo_gem_path(demo_gem) %></td>
         <td><%= link_to 'Destroy', demo_gem, method: :delete, data: { confirm: 'Are you sure?' } %></td>

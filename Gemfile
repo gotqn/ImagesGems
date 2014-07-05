@@ -45,3 +45,8 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+
+
+gem 'thumbnail_hover_effect'
+gem 'railslider'
+gem 'modernizr-rails'

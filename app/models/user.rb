@@ -8,10 +8,8 @@ class User < ActiveRecord::Base
   has_many :articles
 
   # Validations
-  validates :username,
-            :uniqueness => {
-                :case_sensitive => false
-            }
+  validates :username, presence: true, length: { in: 4..39 }, uniqueness: {case_sensitive: false}
+  validates :username, format: { with: /\A[a-zA-Z0-9]+[a-zA-Z\-0-9]*\z/, message: 'Username may only contain alphanumeric characters or dashes and cannot begin with a dash' }
 
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
