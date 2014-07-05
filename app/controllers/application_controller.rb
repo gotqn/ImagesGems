@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  helper_method :get_user_name_by_id
+
   rescue_from CanCan::AccessDenied do |exception|
 
     if exception.action == :show and exception.subject.class.name == 'DemoGem'
@@ -14,6 +16,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+
+  def get_user_name_by_id(user_id)
+    if user_id.nil? or user_id.blank?
+      'User was deleted'
+    else
+      if User.exists?(id: user_id)
+        User.find(user_id).login
+      else
+        'User was deleted'
+      end
+    end
+
+  end
 
   protected
 

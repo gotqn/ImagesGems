@@ -15,6 +15,16 @@
 </p>
 
 <p>
+  <strong>Created on:</strong>
+  <%= @demo_gem.created_at %>
+</p>
+
+<p>
+  <strong>Last modified on:</strong>
+  <%= @demo_gem.updated_at %>
+</p>
+
+<p>
   <%= link_to(@demo_gem.github, title: 'GitHub') do %>
       <%= image_tag('GitHub.png', width: '25', height: '25',alt: 'Show in GitHub') %>
   <% end %>

@@ -12,7 +12,17 @@
 
 <p>
   <strong>Created by:</strong>
-  <%= @article.user_id %>
+  <%= get_user_name_by_id(@article.user_id) %>
+</p>
+
+<p>
+  <strong>Created on:</strong>
+  <%= @article.created_at %>
+</p>
+
+<p>
+  <strong>Last modified on:</strong>
+  <%= @article.updated_at %>
 </p>
 
 <p>
