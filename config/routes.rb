@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  #devise_for :users
-
-  root to: 'articles#index'
+  root to: 'demo_gems#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

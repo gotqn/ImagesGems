@@ -1,4 +1,14 @@
 class ApplicationController < ActionController::Base
+
+  rescue_from CanCan::AccessDenied do |exception|
+
+    if exception.action == :show and exception.subject.class.name == 'DemoGem'
+      redirect_to new_session_path(User.new)
+    else
+      render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
+    end
+  end
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception

@@ -53,3 +53,5 @@ gem 'modernizr-rails'
 
 gem 'omniauth'
 gem 'omniauth-github'
+
+gem 'cancancan'
