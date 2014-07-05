@@ -46,12 +46,10 @@ class Ability
       else
         can :read, DemoGem
         can [:read, :create], Article
-        can [:update, :destroy], Article, user.id: user.id
+        can [:update, :destroy], Article, user_id: user.id
       end
 
     end
-
-
 
   end
 end
