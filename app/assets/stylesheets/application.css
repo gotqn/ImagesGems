@@ -18,8 +18,3 @@
  *= require_tree .
  *= require_self
  */
-
-
-body{
-    background: #ddd url('http://tympanus.net/Tutorials/3DHoverEffects/images/bg.jpg') repeat top left
-}

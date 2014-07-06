@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :get_user_name_by_id
+  helper_method :get_user_name_by_id, :get_articles_by_id
 
   rescue_from CanCan::AccessDenied do |exception|
 
@@ -27,8 +27,16 @@ class ApplicationController < ActionController::Base
         'User was deleted'
       end
     end
-
   end
+
+  def get_articles_by_id(user_id)
+    if Article.exists?(user_id: user_id)
+      Article.where(user_id: user_id)
+    else
+      []
+    end
+  end
+
 
   protected
 

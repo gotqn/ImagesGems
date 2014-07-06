@@ -47,6 +47,7 @@ class Ability
         can :read, DemoGem
         can [:read, :create], Article
         can [:update, :destroy], Article, user_id: user.id
+        can :read, User, id: user.id
       end
 
     end

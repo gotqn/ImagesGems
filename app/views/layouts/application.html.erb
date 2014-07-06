@@ -32,7 +32,7 @@
           <ul class='nav navbar-nav'>
             <li class='<%= 'active' if current_page?(demo_gems_path) or current_page?(root_path) %>'><%= link_to 'Gems', demo_gems_path %></li>
             <li class='<%= 'active' if current_page?(articles_path) %>'><%= link_to 'Articles', articles_path %></li>
-            <% if can? :read, User %>
+            <% if can? :manage, User %>
                 <li class='<%= 'active' if current_page?(users_path) %>'><%= link_to 'Users', users_path %></li>
             <% end %>
           </ul>
@@ -42,7 +42,7 @@
                 <p class='navbar-text'>
                   <%= image_tag avatar_url(current_user), size: '20x20' %>
                   <strong>
-                    <%= get_user_name_by_id(current_user.id) %>
+                    <%= link_to get_user_name_by_id(current_user.id), user_path(current_user.id) %>
                   </strong>
                 </p>
               </li>
@@ -72,6 +72,12 @@
     </nav>
 
     <div class='container'>
+      <% flash.each do |name, msg| %>
+          <div class='alert alert-<%= name == 'notice' ? 'success' : 'danger' %>' role='alert'>
+            <a class='close' data-dismiss='alert'>×</a>
+            <%= msg %>
+          </div>
+      <% end %>
       <%= yield %>
     </div>
 
