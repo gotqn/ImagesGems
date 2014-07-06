@@ -34,7 +34,7 @@ class Ability
     # if current user is administrator
     if user.is_admin?
       can :manage, :all
-      # cannot destroys admins
+      cannot :destroy, User, is_admin: true
     else
 
       # if current user is guest
