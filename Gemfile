@@ -57,4 +57,4 @@ gem 'cancancan'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
-gem 'simple_form'
+gem 'simple_form', '3.1.0.rc1'
