@@ -1,7 +1,7 @@
 <div class="row">
   <% @demo_gems.each do |demo_gem| %>
   <div class="col-sm-6 col-md-4">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <%= link_to(demo_gem.github, title: 'Show in GitHub') do %>
             <%= image_tag('GitHub.png', width: '25', height: '25',alt: 'GitHub') %>
@@ -43,8 +43,7 @@
   <% end %>
 </div>
 
-<div>
+<%= link_to new_demo_gem_path, class: 'btn btn-primary' do %>
+  <i class='icon-doc-add'></i> New GEM
+<% end %>
 
-<%= link_to 'New Demo gem', new_demo_gem_path %>
-
-</div>

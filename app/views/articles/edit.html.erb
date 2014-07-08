@@ -1,6 +1,16 @@
-<h1>Editing article</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>Editing article</strong></h3>
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= render 'form' %>
+<%= link_to @article, class: 'btn btn-success' do %>
+    <i class='icon-list-alt'></i> Show
+<% end %>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to articles_path, class: 'btn btn-default btn-primary' do %>
+    <i class='icon-left-big'></i> Back
+<% end %>
