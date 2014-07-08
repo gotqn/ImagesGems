@@ -1,47 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class='panel panel-primary'>
+  <div class='panel-heading'>
+    <h3 class='panel-title'><%= @demo_gem.name %></h3>
+  </div>
+  <div class='panel-body'>
+    <%= @demo_gem.description %>
+    <div class='panel-gem'>
+        <%= eval(@demo_gem.code).html_safe %>
+    </div>
+    <div style='display: inline-block'>
+      <strong>Created on:</strong>
+      <%= @demo_gem.created_at.to_date %>
+      <br />
+      <strong>Last modified on:</strong>
+      <%= @demo_gem.updated_at.to_date %>
+    </div>
+  </div>
+  <div class='panel-footer'>
+    <%= link_to(@demo_gem.github, title: 'GitHub') do %>
+        <%= image_tag('GitHub.png', width: '25', height: '25',alt: 'Show in GitHub') %>
+    <% end %>
+    <%= link_to(@demo_gem.rubygems, title: 'RubyGems') do %>
+        <%= image_tag('RubyGems.png', width: '25', height: '25',alt: 'Show in RubyGems') %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @demo_gem.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @demo_gem.description %>
-</p>
-
-<p>
-  <%= image_tag @demo_gem.image_url %>
-</p>
-
-<p>
-  <strong>Created on:</strong>
-  <%= @demo_gem.created_at %>
-</p>
-
-<p>
-  <strong>Last modified on:</strong>
-  <%= @demo_gem.updated_at %>
-</p>
-
-<p>
-  <%= link_to(@demo_gem.github, title: 'GitHub') do %>
-      <%= image_tag('GitHub.png', width: '25', height: '25',alt: 'Show in GitHub') %>
-  <% end %>
-</p>
-
-<p>
-  <%= link_to(@demo_gem.rubygems, title: 'RubyGems') do %>
-      <%= image_tag('RubyGems.png', width: '25', height: '25',alt: 'Show in RubyGems') %>
-  <% end %>
-</p>
-
-
-
-<p>
-  <strong>Code:</strong>
-  <%= eval(@demo_gem.code).html_safe %>
-</p>
-
-<%= link_to 'Edit', edit_demo_gem_path(@demo_gem) %> |
-<%= link_to 'Back', demo_gems_path %>
+<% if can? :manage, DemoGem %>
+    <%= link_to edit_demo_gem_path(@demo_gem), class: 'btn btn-warning' do %>
+        <i class='icon-pencil'></i> Edit
+    <% end %>
+<% end %>
+<% if can? :read, DemoGem %>
+    <%= link_to demo_gems_path, class: 'btn btn-default btn-primary' do %>
+        <i class='icon-left-big'></i> Back
+    <% end %>
+<% end %>

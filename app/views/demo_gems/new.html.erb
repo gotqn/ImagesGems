@@ -1,5 +1,13 @@
-<h1>New demo_gem</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>New GEM</strong></h3>
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= render 'form' %>
+<%= link_to demo_gems_path, class: 'btn btn-default btn-primary' do %>
+    <i class='icon-left-big'></i> Back
+<% end %>
 
-<%= link_to 'Back', demo_gems_path %>

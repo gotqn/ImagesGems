@@ -1,6 +1,16 @@
-<h1>Editing demo_gem</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><strong>Editing GEM</strong></h3>
+  </div>
+  <div class="panel-body">
+    <%= render 'form' %>
+  </div>
+</div>
 
-<%= render 'form' %>
+<%= link_to @demo_gem, class: 'btn btn-success' do %>
+    <i class='icon-list-alt'></i> Show
+<% end %>
 
-<%= link_to 'Show', @demo_gem %> |
-<%= link_to 'Back', demo_gems_path %>
+<%= link_to demo_gems_path, class: 'btn btn-default btn-primary' do %>
+    <i class='icon-left-big'></i> Back
+<% end %>
