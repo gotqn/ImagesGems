@@ -42,8 +42,8 @@
   </div>
   <% end %>
 </div>
-
+<% if can? :manage, DemoGem %>
 <%= link_to new_demo_gem_path, class: 'btn btn-primary' do %>
   <i class='icon-doc-add'></i> New GEM
 <% end %>
-
+<% end %>
